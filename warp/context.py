@@ -36,7 +36,6 @@ from pathlib import Path
 from typing import (
     Any,
     Callable,
-    Dict,
     Iterable,
     List,
     Literal,
@@ -1164,7 +1163,7 @@ def struct(c: type) -> warp.codegen.Struct:
     return s
 
 
-def overload(kernel: Kernel | Callable, arg_types: Union[None, Dict[str, Any], List[Any]]):
+def overload(kernel: Kernel | Callable, arg_types: dict[str, Any] | list[Any] | None = None):
     """Overload a generic kernel with the given argument types.
 
     Can be called directly or used as a function decorator.
